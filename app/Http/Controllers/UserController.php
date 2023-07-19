@@ -44,7 +44,7 @@ class UserController extends Controller
             if ($request->jumlah_barang < 0) {
                 return redirect()
                     ->back()
-                    ->with('error', 'Minimal jumlah barang adalah 0.');
+                    ->with('error', 'Jumlah barang minimal adalah 0.');
             } else {
                 $stock = DB::TABLE('barang')
                     ->where('id', $request->barang)
@@ -52,7 +52,7 @@ class UserController extends Controller
                 if ($stock < $request->jumlah_barang) {
                     return redirect()
                         ->back()
-                        ->with('error', 'Stok tidak mencukupi.');
+                        ->with('error', 'Jumlah Stok tidak cukup.');
                 } else {
                     $price = DB::TABLE('barang')
                         ->where('id', $request->barang)
@@ -74,7 +74,7 @@ class UserController extends Controller
                     if ($transaksi_count > 0) {
                         return redirect()
                             ->back()
-                            ->with('error', 'No Transaksi telah terdaftar didalam database.');
+                            ->with('error', 'Nomor Transaksi telah terdaftar.');
                     } else {
                         if ($todaySend > 4) {
                             return redirect()
@@ -98,11 +98,11 @@ class UserController extends Controller
                                     ]);
                                 return redirect()
                                     ->back()
-                                    ->with('success', 'Data berhasil diinput.');
+                                    ->with('success', 'Data berhasil dimasukan.');
                             } else {
                                 return redirect()
                                     ->back()
-                                    ->with('error', 'Terjadi kesalahan.');
+                                    ->with('error', 'Error.');
                             }
                         }
                     }

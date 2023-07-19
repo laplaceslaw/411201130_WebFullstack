@@ -10,14 +10,14 @@ class AuthController extends Controller
     {
         if($request->username == null || $request->password == null)
         {
-            return redirect()->back()->with('error', 'Username dan Password wajib diisi.');
+            return redirect()->back()->with('error', 'Username dan Password harus dimasukan.');
         }
         else
         {
             $userCount = DB::TABLE("kurir")->where("name", $request->username)->where("password", md5($request->password))->count();
             if($userCount == 0)
             {
-                return redirect()->back()->with('error', 'User tidak terdaftar didatabase.');
+                return redirect()->back()->with('error', 'Username tidak terdaftar.');
             }
             else
             {
