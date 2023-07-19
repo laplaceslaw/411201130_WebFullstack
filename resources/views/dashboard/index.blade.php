@@ -1,13 +1,12 @@
 <?php
-
 use Carbon\Carbon;
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 @include('partials.head')
+<link rel="shortcut icon" type="image/png" href="https://kucinkputih.com/.UNDIRA/cat--v3.png"/>
 
 <body class="hold-transition sidebar-mini">
 
@@ -33,11 +32,39 @@ use Carbon\Carbon;
             </section>
 
             <section class="content">
-                <div class="row justify-content-center mb-3">
-                    <div class="col-md-4 mb-3">
-                        <div class="card bg-pink">
+
+                <!--  Donut chart Lokasi dan Barang -->
+                <div class="row justify-content-center">
+                    <div class="col-md-6 mb-3">
+                        <div class="card">
+                            <div class="card-header bg-green"><h5><b>Chart Lokasi</b></h5></div>
                             <div class="card-body">
-                                <p>Total Pengiriman (3 bulan terakhir)</p>
+                                <div id="donut-chart" style="height: 250px;"></div>
+                                <a href="javascript:;"
+                                    onclick="alert('Ini adalah lokasi yang memiliki jumlah barang dikirim lebih dari 100 (>100) dalam 1 bulan')"
+                                    class="btn btn-primary w-100 mt-3">Keterangan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card">
+                            <div class="card-header bg-green"><h5><b>Chart Barang</b></h5></div>
+                            <div class="card-body">
+                                <div id="donut-chart2" style="height: 250px;"></div>
+                                <a href="javascript:;"
+                                    onclick="alert('Ini adalah barang yang memiliki harga barang lebih dari 1.000 (>1.000) dalam 1 tahun')"
+                                    class="btn btn-primary w-100 mt-3">Keterangan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  Dashboard Total -->
+                <div class="row justify-content-left mb-3">
+                    <div class="col-md-4 mb-3">
+                        <div class="card bg-yellow">
+                            <div class="card-body">
+                                <p><b>Total Keseluruhan Pengiriman</b><br><i>Dalam 3 Bulan</i></p>
                                 @php
                                     $threeMonthsAgo = Carbon::now()->subMonths(3);
                                     
@@ -50,9 +77,9 @@ use Carbon\Carbon;
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <div class="card bg-pink">
+                        <div class="card bg-yellow">
                             <div class="card-body">
-                                <p>Lokasi Terbanyak (3 bulan terakhir)</p>
+                                <p><b>Lokasi Terbanyak Sebagai Tujuan Pengiriman</b><br><i>Dalam 1 Bulan</i></p>
                                 @php
                                     $oneMonthAgo = Carbon::now()->subMonths(1);
                                     
@@ -72,9 +99,9 @@ use Carbon\Carbon;
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <div class="card bg-pink">
+                        <div class="card bg-yellow">
                             <div class="card-body">
-                                <p>Barang Terbanyak (1 tahun terakhir)</p>
+                                <p><b>Jumlah Barang Terbanyak Sebagai Pengiriman</b><br><i>Dalam 1 Tahun</i></p>
                                 @php
                                     $oneYearAgo = Carbon::now()->subYear(1);
                                     
@@ -102,40 +129,16 @@ use Carbon\Carbon;
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-6 mb-3">
-                        <div class="card  bg-pink">
-                            <div class="card-header">Chart Lokasi</div>
-                            <div class="card-body">
-                                <div id="donut-chart" style="height: 300px;"></div>
-                                <a href="javascript:;"
-                                    onclick="alert('barang yang memiliki harga barang lebih dari 1000 [>1000] selama 1 tahun ini [tahun berjalan]')"
-                                    class="btn btn-primary w-100 mt-3">Detail</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <div class="card bg-pink">
-                            <div class="card-header">Chart Barang</div>
-                            <div class="card-body">
-                                <div id="donut-chart2" style="height: 300px;"></div>
-                                <a href="javascript:;"
-                                    onclick="alert('Grafik chart yang berdasarkan barang yang memiliki harga barang lebih dari 1000 [>1000] selama 1 tahun ini [tahun berjalan]')"
-                                    class="btn btn-primary w-100 mt-3">Detail</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
+            </section>
         </div>
 
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.2.0
+                <b>UAS Web Fullstack.</b> 411201130 | Indra Surya Hanjaya
             </div>
             <strong>Copyright &copy; 2023 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
-            reserved.
+            reserved. <b>Version</b> 3.2.0
         </footer>
         <aside class="control-sidebar control-sidebar-dark">
         </aside>
