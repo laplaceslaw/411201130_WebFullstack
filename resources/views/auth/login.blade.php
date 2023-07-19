@@ -1,6 +1,8 @@
 <html>
 @include('partials.head')
 
+<link rel="shortcut icon" type="image/png" href="https://kucinkputih.com/.UNDIRA/Logo-UNDIRA.png"/>
+
 <body class="hold-transition login-page">
     <div class="login-box">
     <img src="https://kucinkputih.com/.UNDIRA/Logo.jpg" style="width: 100%";></img>
