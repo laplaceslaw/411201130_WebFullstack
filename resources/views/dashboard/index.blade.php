@@ -37,7 +37,7 @@ use Carbon\Carbon;
                 <div class="row justify-content-center">
                     <div class="col-md-6 mb-3">
                         <div class="card">
-                            <div class="card-header bg-green"><h5><b>Chart Lokasi</b></h5></div>
+                            <div class="card-header bg-gray"><h5><b>Chart Lokasi</b></h5></div>
                             <div class="card-body">
                                 <div id="donut-chart" style="height: 250px;"></div>
                                 <a href="javascript:;"
@@ -48,7 +48,7 @@ use Carbon\Carbon;
                     </div>
                     <div class="col-md-6 mb-3">
                         <div class="card">
-                            <div class="card-header bg-green"><h5><b>Chart Barang</b></h5></div>
+                            <div class="card-header bg-gray"><h5><b>Chart Barang</b></h5></div>
                             <div class="card-body">
                                 <div id="donut-chart2" style="height: 250px;"></div>
                                 <a href="javascript:;"
@@ -62,7 +62,7 @@ use Carbon\Carbon;
                 <!--  Dashboard Total -->
                 <div class="row justify-content-left mb-3">
                     <div class="col-md-4 mb-3">
-                        <div class="card bg-yellow">
+                        <div class="card bg-gray">
                             <div class="card-body">
                                 <p><b>Total Keseluruhan Pengiriman</b><br><i>Dalam 3 Bulan</i></p>
                                 @php
@@ -77,7 +77,7 @@ use Carbon\Carbon;
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <div class="card bg-yellow">
+                        <div class="card bg-gray">
                             <div class="card-body">
                                 <p><b>Lokasi Terbanyak Sebagai Tujuan Pengiriman</b><br><i>Dalam 1 Bulan</i></p>
                                 @php
@@ -99,7 +99,7 @@ use Carbon\Carbon;
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <div class="card bg-yellow">
+                        <div class="card bg-gray">
                             <div class="card-body">
                                 <p><b>Jumlah Barang Terbanyak Sebagai Pengiriman</b><br><i>Dalam 1 Tahun</i></p>
                                 @php
