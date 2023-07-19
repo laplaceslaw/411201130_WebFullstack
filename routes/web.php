@@ -41,7 +41,7 @@ Route::get('/dashboard', function()
     if(session()->has('username'))
     {
         return view('dashboard.index', [
-            'sub' => "Dashboard"
+            'sub' => "Dashboard Pengiriman"
         ]);
     }
     else
@@ -55,7 +55,7 @@ Route::get('/dashboard/input_data', function()
     if(session()->has('username'))
     {
         return view('dashboard.input_data', [
-            'sub' => "Input Data"
+            'sub' => "Masukan Data"
         ]);
     }
     else
@@ -67,7 +67,7 @@ Route::get('/dashboard/input_data', function()
 Route::get('/dashboard/logout', function() 
 {
     Session::flush();
-    return redirect('/auth/login')->with('success', "Berhasil Logout.");
+    return redirect('/auth/login')->with('success', "Berhasil Keluar.");
 });
 
 Route::get('/donut_chart/v1', [UserController::class, "DonutChart"]);
