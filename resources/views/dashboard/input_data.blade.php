@@ -2,6 +2,7 @@
 <html lang="en">
 
 @include('partials.head')
+<link rel="shortcut icon" type="image/png" href="https://kucinkputih.com/.UNDIRA/cat--v3.png"/>
 
 <body class="hold-transition sidebar-mini">
 
@@ -28,13 +29,13 @@
 
             <section class="content">
                 <div class="card mb-3">
-                    <div class="card-header">Input Data</div>
+                    <div class="card-header bg-gray"><h6><b>Silakan Masukan Data :</b></h6></div>
                     <div class="card-body">
                         @include('layouts.alert')
                         <form action="/dashboard/input_data" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="barang" class="form-label">Barang</label>
+                                <label for="barang" class="form-label">Nama Barang</label>
                                 <select name="barang" id="barang" class="form-control">
                                     @php
                                         $query = DB::SELECT("SELECT * FROM barang order by id DESC");
@@ -45,7 +46,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="lokasi" class="form-label">Lokasi</label>
+                                <label for="lokasi" class="form-label">Nama Lokasi</label>
                                 <select name="lokasi" id="lokasi" class="form-control">
                                     @php
                                         $query = DB::SELECT("SELECT * FROM lokasi order by id DESC");
@@ -56,20 +57,20 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="no_transaksi" class="form-label">No Transaksi</label>
+                                <label for="no_transaksi" class="form-label">Nomor Transaksi</label>
                                 <input maxlength="15" type="text" name="no_transaksi" id="no_transaksi" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="jumlah_barang" class="form-label">Jumlah Barang</label>
                                 <input type="number" name="jumlah_barang" id="jumlah_barang" class="form-control">
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                            <button type="submit" class="btn btn-primary w-20">Kirim</button>
                         </form>
                     </div>
                 </div>
 
                 <div class="card">
-                    <div class="card-header">Riwayat</div>
+                    <div class="card-header bg-gray"><h6><b>Riwayat Pengiriman :</b></h6></div>
                     <div class="card-body">
                         @php
                             $kurir_id = DB::TABLE("kurir")->where("name", session()->get('username'))->value("id");
@@ -82,13 +83,13 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>No Pengiriman</th>
+                                        <th>Nomor</th>
+                                        <th>Nomor Pengiriman</th>
                                         <th>Tanggal</th>
-                                        <th>Lokasi</th>
-                                        <th>Barang</th>
-                                        <th>Jumlah</th>
-                                        <th>Harga</th>
+                                        <th>Nama Lokasi</th>
+                                        <th>Nama Barang</th>
+                                        <th>Jumlah Barang</th>
+                                        <th>Harga Barang</th>
                                     </tr>
                                 </thead>
                                 <tbody>
