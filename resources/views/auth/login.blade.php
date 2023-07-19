@@ -3,12 +3,13 @@
 
 <body class="hold-transition login-page">
     <div class="login-box">
+    <img src="https://kucinkputih.com/.UNDIRA/Logo.jpg" style="width: 100%";></img>
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="/" class="h1"><b>Admin</b>LTE</a>
+                <a href="/" class="h1">Aplikasi <b>Transaksi</b></a>
             </div>
             <div class="card-body"> 
-                <p class="login-box-msg">Sign in to start your session</p>
+                <p class="login-box-msg">Silahkan masuk untuk menggunakan :</p>
                 <form action="/auth/login" method="post">
                     @csrf
                     @include('layouts.alert')
@@ -28,7 +29,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    <button type="submit" class="btn btn-primary btn-block">Masuk</button>
                 </form>
             </div>
         </div>
