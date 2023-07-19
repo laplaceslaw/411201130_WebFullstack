@@ -16,19 +16,19 @@
                 <li class="nav-item">
                     <a href="/dashboard" class="nav-link {{ ($sub == "Dashboard") ? 'active' : '' }}">
                         <i class="nav-icon fas fa-home"></i>
-                        <p class="text">Dashboard</p>
+                        <p class="text">Beranda</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/dashboard/input_data" class="nav-link {{ ($sub == "Input Data") ? 'active' : '' }}">
                         <i class="nav-icon fas fa-database"></i>
-                        <p class="text">Input Data</p>
+                        <p class="text">Masukan Data</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/dashboard/logout" class="nav-link {{ ($sub == "Input Data") ? 'active' : '' }}">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
-                        <p class="text">Logout</p>
+                        <p class="text">Keluar</p>
                     </a>
                 </li>
             </ul>
