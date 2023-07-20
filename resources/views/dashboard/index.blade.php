@@ -144,6 +144,8 @@ use Carbon\Carbon;
         </aside>
     </div>
     @include('partials.script')
+
+    <!-- Donut Chart -->
     <script>
         function updateChart() {
             $.ajax({
@@ -168,7 +170,7 @@ use Carbon\Carbon;
                         donutWidth: 60,
                         donutSolid: true,
                         startAngle: 270,
-                        showLabel: true
+                        showLabel: true,
                     };
 
                     new Chartist.Pie('#donut-chart', chartData, chartOptions);
@@ -179,6 +181,8 @@ use Carbon\Carbon;
         updateChart();
         setInterval(updateChart, 5000);
     </script>
+    
+    <!-- Donut Chart v2 -->
     <script>
         function updateChart2() {
             $.ajax({
@@ -203,7 +207,7 @@ use Carbon\Carbon;
                         donutWidth: '100%',
                         donutSolid: true,
                         startAngle: 0,
-                        showLabel: true
+                        showLabel: true,
                     };
 
                     new Chartist.Pie('#donut-chart2', chartData, chartOptions);
@@ -217,6 +221,7 @@ use Carbon\Carbon;
         updateChart2();
         setInterval(updateChart2, 5000);
     </script>
+
 </body>
 
 </html>
